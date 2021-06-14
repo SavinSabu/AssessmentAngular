@@ -1,0 +1,21 @@
+app-settings, .tab-host {
+  flex: auto;
+  display: flex;
+  overflow: auto;
+  mat-tab-group {
+    flex: auto;
+    display: flex;
+  }
+  .mat-tab-body-wrapper, .mat-tab-body, .mat-tab-body-content{
+      flex: auto;
+      display: flex;
+      flex-direction: column;
+  }
+  .fx-start-space{
+    place-content: start space-between;
+    align-items: stretch;
+  }
+}
+app-advance-slabs mat-card{
+  min-height: 130px;
+}

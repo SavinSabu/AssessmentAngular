@@ -1,0 +1,45 @@
+<div class="app-customer-wrap" [dir]='layoutConf.dir'>
+    <div class="main-content-wrap fixed-topbar">
+        <div class="rightside-content-hold" id="contentArea" #contentArea>
+            <div class="view-loader" *ngIf="isModuleLoading">
+                <div class="spinner">
+                    <div class="double-bounce1 mat-bg-accent"></div>
+                    <div class="double-bounce2 mat-bg-primary"></div>
+                </div>
+            </div>
+            <div class="bg-gray fix-bars">
+                <div class="text-left common-head" fxLayout="row">
+                    <div>
+                        <img width="30" height="30" src="assets/icons/icon-72x72.png" alt="Customers" /> Customer - Portfolio
+                    </div>
+                    <div>
+                        <form *ngIf="fabricSearch" #fabricSearchForm="ngForm" id="fabric_search_form" (ngSubmit)="search(search_value.value)" fxLayout="row">
+                            <mat-icon style="color: darkgrey;">search</mat-icon>
+                            <input matInput placeholder="Search" name="search_value" [(ngModel)]="searchValue" (ngModelChange)="search(search_value.value, 'Live')" #search_value required />
+                        </form>
+                    </div>
+                </div>
+                <div class="home-hold p-8">
+                    <router-outlet></router-outlet>
+                </div>
+                <div class="common-footer">
+                    <button mat-button (click)="gotoPage('home')">
+                        <mat-icon>local_laundry_service</mat-icon> <span>Order</span>
+                    </button>
+                    <button mat-button (click)="gotoPage('home/cart')">
+                        <mat-icon [matBadge]="cartTotal" matBadgeSize="large" matBadgeColor="warn" matBadgeOverlap="true">shopping_cart</mat-icon> <span>Cart</span>
+                    </button>
+                    <button mat-button (click)="gotoPage('home/my-orders')">
+                        <mat-icon>history</mat-icon> <span>My Orders</span>
+                    </button>
+                    <button *ngIf="user && user.user_id > 0" mat-button (click)="gotoPage('signout')">
+                        <mat-icon>face</mat-icon> <span>Sign Out</span>
+                    </button>
+                    <button *ngIf="!user || !user.user_id || user.user_id == 0" mat-button (click)="gotoPage('sessions/signin')">
+                        <mat-icon>face</mat-icon> <span>Sign In</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

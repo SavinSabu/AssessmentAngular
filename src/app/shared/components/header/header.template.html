@@ -1,0 +1,63 @@
+<mat-toolbar class="topbar topbar-white">
+  <button fxFlex="40px" *ngIf="layoutConf.sidebarStyle !== 'compact'" mat-icon-button id="sidenavToggle" (click)="toggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <button fxFlex="40px" *ngIf="layoutConf.sidebarStyle !== 'closed'" mat-icon-button id="collapseToggle" fxHide.lt-md="true" (click)="toggleCollapse()" matTooltip="Toggle Collapse" class="toggle-collapsed">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <div [ngClass]="searchActive?'topbar-search active' : 'topbar-search'" fxFlex="40px" [@animate]="{value:'widht',params:{scale:'.9',delay:'50ms',duration:'2000ms'}}">
+    <button mat-icon-button id="searchNFilter" (click)="searchActive=true" matTooltip="Search & Filter">
+      <mat-icon>search</mat-icon>
+    </button>
+    <form fxFlex="100" class="p-1" (ngSubmit)="searchNFilter(filter_value.value)">
+      <mat-form-field class="full-width active" appearance="standard">
+        <input #filter_value placeholder="Search" matInput />
+        <button id="adv-search-button" type="button" mat-icon-button matSuffix (click)="advSearchActive=!advSearchActive">
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+      </mat-form-field>
+    </form>
+    <button mat-icon-button class="active" (click)="searchActive=false" matTooltip="Close">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <app-search [class.active]="advSearchActive && searchActive"></app-search>
+  <span fxFlex></span>
+  <button fxFlex="40px" mat-icon-button [matMenuTriggerFor]="accountMenu" class="topbar-button-right img-button">
+    <svg width="32" height="32" class="userface">
+      <g transform="scale(0.065,0.065)">
+        <path
+          d="M297.662,349.34c-5.374-7.683-9.313-20.278-1.01-69.361c14.189-14.058,25.928-27.078,28.648-30.128l0.733-0.821
+          l2.368-12.976c20.311-43.728,83.158-202.962-66.84-225.785C91.88-15.559,93.441,185.748,154.925,246.148l0.525,2.881l0.741,0.821
+          c2.717,3.05,14.459,16.078,28.659,30.137c7.051,41.761,5.252,57.121,1.116,65.633C121.8,358.629,16.571,390.315,0,463.03h235.511
+          h235.513C444.069,396.463,358.006,364.295,297.662,349.34z M188.275,272.312c-1.311-1.302-2.607-2.612-3.896-3.923
+          c-7.867-7.983-15.356-15.97-21.596-22.947l-7.835-42.877c-0.415-2.473-0.767-4.869-1.146-7.288
+          c0.291-40.93,5.975-91.211,32.118-91.794l59.22,45.14v-14.719l33.117,14.719l-6.023-27.475l14.051,4.905l5.021-15.699
+          l-12.043-30.42l53.15,55.813c0.337,19.432-1.61,41.701-5.858,66.772l-7.851,42.923c-6.24,6.97-13.722,14.964-21.588,22.947
+          c-1.287,1.311-2.589,2.621-3.896,3.923c-1.318,1.318-2.649,2.621-3.983,3.928c-19.74,19.34-40.126,36.628-48.49,36.628
+          c-8.369,0-28.749-17.288-48.491-36.628C190.92,274.934,189.594,273.631,188.275,272.312z M240.748,424.438
+          c-39.134,0-70.983-18.049-70.983-40.234c0-7.182,3.565-14.314,10.307-20.622l0.894-0.842c1.659-1.459,3.486-2.869,5.458-4.204
+          l1.176-1.186c2.817-3.551,5.677-7.146,7.574-13.525c2.787-9.354,3.488-24.777-0.946-54.745
+          c17.418,16.406,36.332,31.654,46.504,31.654c10.171,0,29.086-15.248,46.502-31.654c-4.945,33.365-3.486,48.698,0.164,57.835
+          c1.868,4.669,4.316,7.742,6.761,10.816l0.874,0.821c2.039,1.378,3.919,2.821,5.574,4.315l0.789,0.737
+          c6.736,6.3,10.304,13.438,10.304,20.623C311.724,406.39,279.885,424.438,240.748,424.438z"
+        />
+      </g>
+    </svg>
+  </button>
+
+  <mat-menu #accountMenu="matMenu">
+    <div class="welcome">
+      <div class="username">{{username}}<br /></div>
+    </div>
+    <mat-divider></mat-divider>
+    <button mat-menu-item (click)="changePassword()">
+      <mat-icon>lock</mat-icon>
+      <span>Change Password</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Sign out</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

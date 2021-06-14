@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content class="image_area">
+    <div #imageEdit (update)="newResult()"></div>
+    <button mat-button (click)="imageUpload.click()" class="uploadDp">
+        <mat-icon class="text-white" >camera</mat-icon>
+    </button>
+</div>
+<div mat-dialog-actions>
+    <input type="file" id="fileupload" class="hidden" #imageUpload (change)="imageUploadEvent($event)"
+        accept="image/gif, image/jpeg, image/png" />
+    <button mat-raised-button color="accent" (click)="rotate()">rotate</button>
+    <div fxFlex></div>
+    <button mat-raised-button color="accent" (click)="onCancel()">cancel</button>
+    <button mat-raised-button color="primary" (click)="saveImageFromCroppie()">Save</button>
+</div>

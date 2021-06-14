@@ -1,0 +1,92 @@
+.rounded {
+  border-radius: 8px;
+  &-circle {
+    border-radius: 50%;
+  }
+  &.mat-progress-bar,
+  .mat-progress-bar-fill {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+}
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+// Alignment
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.float-none {
+  float: none;
+}
+
+// BACKGROUND SIZES
+.background-size-cover {
+  background-size: cover;
+}
+.background-size-contain {
+  background-size: contain;
+}
+.background-size-100 {
+  background-size: 100%;
+}
+
+[dir="rtl"] {
+  .float-left {
+    float: right;
+  }
+  .float-right {
+    float: left;
+  }
+}
+.v-center{
+  vertical-align: middle !important;
+}
+.hidden{
+  visibility: hidden !important;
+}
+.pos-rel{
+  position: relative  !important;
+}
+mat-list.full-list{
+  margin: 0 -16px !important;
+  mat-list-item{
+    width: auto !important;
+    padding: 0 16px !important;
+  }
+  mat-list-item:nth-child(even){
+    background-color: #f8f8f8;
+  }
+}
+
+.uploadDp {
+  position: absolute !important;
+  top: 5px;
+  right: 45px;
+  z-index: 10;
+  min-width: 0 !important;
+  background: rgba(0, 0, 0, 0.4) !important;
+  padding: 5px 10px !important;
+}
+.uploadDp .mat-icon {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+}
+
+.shadow{
+  box-shadow: 0 0 3px #555555;
+}
+
+.foot-buttons{
+  z-index: 10000;
+  padding: 8px 1em;
+  box-shadow: 0 0 3px #555555;
+  button{
+    min-width: 100px !important;
+  }
+}

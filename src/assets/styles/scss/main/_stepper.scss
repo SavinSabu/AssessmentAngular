@@ -1,0 +1,22 @@
+mat-horizontal-stepper {
+  .mat-horizontal-content-container {
+    padding: 0 !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  .mat-horizontal-stepper-content {
+    overflow: auto;
+    display: flex;
+    flex: 1;
+    &[aria-expanded="false"] {
+      display: none;
+    }
+  }
+  .mat-list-item-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}

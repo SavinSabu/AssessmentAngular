@@ -1,0 +1,14 @@
+// Remove imports which are not needed for your project
+@import "views/sessions";
+@import "views/order";
+@import "views/users";
+@import "views/customer";
+@import "views/home";
+@import "views/settings";
+@import "views/replyto"
+/* 
+  Only Required if you want to use Angular Landing
+  (https://themeforest.net/item/angular-landing-material-design-angular-app-landing-page/21198258)
+*/
+
+// @import "views/landing";

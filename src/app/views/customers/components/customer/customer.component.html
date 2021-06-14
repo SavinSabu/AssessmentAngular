@@ -1,0 +1,45 @@
+<div fxFlex="100" *ngIf="loading" class="empty-data">loading...</div>
+<div fxFlex #customerList>
+    <div *ngIf="customers && !loading">
+        <mat-list dense class="p-0">
+            <mat-list-item *ngFor="let customer of customers| sort:'customerId'; let i = index; trackBy: trackByCustomers"  [@animate]="{value:'*',params:{scale:'.9'}}">
+                <!-- cloud_url -->
+                <img alt="Customer image" class="defaultDP" min-width="150" min-height="150"  mat-list-avatar
+                  [src]="customer.customer_dp && customer.customer_dp.length < 100 ? 'cloud_url' + customer.customer_dp : '/assets/images/user.png'"/>
+                   
+                <div mat-line class="custom-customer-name" fxLayoutAlign="space-between center">
+                    <mat-label fxFlex="33.333">{{customer.customerName}}</mat-label>
+                    <mat-label fxFlex="33.333">{{ customer.dateOfBirth}}</mat-label>
+                    <mat-label fxFlex="33.333">{{ customer.country}}</mat-label>
+                </div>
+                <div mat-line class="dull">
+                    <mat-label fxFlex="33.333" class="mr-1 custom-customer-sub" *ngIf="customer.customerMeta.customerType">Type: 
+                        <mat-label>{{ customer.customerMeta.customerType}}</mat-label></mat-label>
+                    <mat-label fxFlex="33.333" class="mr-1 custom-customer-sub" *ngIf="customer.customerMeta.expectedIncome">Exp Income: 
+                        <mat-label>{{ customer.customerMeta.expectedIncome}}</mat-label></mat-label>
+                    <mat-label fxFlex="33.333" class="mr-1 custom-customer-sub" *ngIf="customer.customerMeta.idExpiry">Id Exp.: 
+                        <mat-label>{{ customer.customerMeta.idExpiry}}</mat-label></mat-label>
+                    <!-- <mat-label fxFlex="25" class="mr-1 custom-customer-sub" *ngIf="customer.customerMeta.nationality">Source: 
+                        <mat-label>{{ customer.customerMeta.sourceOfFunds}}</mat-label></mat-label> -->
+                </div>
+                <div fxFlex="row" fxFlex="100px" fxLayoutAlign="end center">
+                    <mat-slide-toggle color="primary" (click)="statusChange(customer)" [(ngModel)]="customer.customer_status" class="mr-1"  *ngIf="false"></mat-slide-toggle>
+                    <button mat-icon-button (click)="view(customer)">
+                        <mat-icon class="">open_in_new</mat-icon>
+                    </button>
+                    <button mat-icon-button [matMenuTriggerFor]="customerMenu">
+                        <mat-icon class="">more_vert</mat-icon>
+                    </button>
+                </div>
+                <mat-menu #customerMenu="matMenu">
+                    <button mat-menu-item (click)="edit(customer)">
+                        <mat-icon>edit</mat-icon> Edit
+                    </button>
+                    <button mat-menu-item (click)="delete(customer)">
+                        <mat-icon>delete</mat-icon> Delete
+                    </button>
+                </mat-menu>
+            </mat-list-item>
+        </mat-list>
+    </div>
+</div>

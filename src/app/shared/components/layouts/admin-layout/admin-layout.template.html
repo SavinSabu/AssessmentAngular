@@ -1,0 +1,38 @@
+<div class="app-admin-wrap" [dir]='layoutConf.dir'>
+  <!-- Header for top navigation layout -->
+  <!-- Main Container -->
+  <mat-sidenav-container [dir]='layoutConf.dir' class="app-admin-container app-side-nav-container mat-drawer-transition"
+    [ngClass]="{
+    'navigation-top': layoutConf.navigationPos === 'top',
+    'sidebar-full': layoutConf.sidebarStyle === 'full',
+    'sidebar-compact': layoutConf.sidebarStyle === 'compact' && layoutConf.navigationPos === 'side',
+    'sidebar-compact-big': layoutConf.sidebarStyle === 'compact-big' && layoutConf.navigationPos === 'side',
+    'layout-intransition': layoutConf.layoutInTransition,
+    'sidebar-opened': layoutConf.sidebarStyle !== 'closed' && layoutConf.navigationPos === 'side',
+    'sidebar-closed': layoutConf.sidebarStyle === 'closed',
+    'fixed-topbar': layoutConf.topbarFixed && layoutConf.navigationPos === 'side'
+  }">
+    <!-- SIDEBAR -->
+    <!-- ONLY REQUIRED FOR **SIDE** NAVIGATION LAYOUT -->
+    <app-sidebar-side *ngIf="layoutConf.navigationPos === 'side'" class="no-print"></app-sidebar-side>
+
+    <!-- Top navigation layout (navigation for mobile screen) -->
+    <div class="main-content-wrap">
+      <app-header *ngIf="layoutConf.navigationPos === 'side'" class="no-print">
+      </app-header>
+      <div class="rightside-content-hold" id="contentArea" #contentArea>
+        <div class="view-loader no-print" *ngIf="isModuleLoading">
+          <div class="spinner">
+            <div class="double-bounce1 mat-bg-accent"></div>
+            <div class="double-bounce2 mat-bg-primary"></div>
+          </div>
+        </div>
+        <app-breadcrumb class="no-print"></app-breadcrumb>
+        <router-outlet></router-outlet>
+        <app-footer class="no-print"></app-footer>
+      </div>
+    </div>
+    <div class="sidebar-backdrop no-print" [ngClass]="{'visible': layoutConf.sidebarStyle !== 'closed' && layoutConf.isMobile}"
+      (click)="closeSidebar()"></div>
+  </mat-sidenav-container>
+</div>

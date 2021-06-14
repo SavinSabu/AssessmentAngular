@@ -1,0 +1,51 @@
+/*
+ *
+ *   Company - Angular Material Design Admin Template
+ *
+ *
+*/
+
+// Third pirty style files
+// Sidebar Scroll
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+
+// Rich Text Editor
+//@import '~quill/dist/quill.core.css';
+//@import '~quill/dist/quill.snow.css';
+// Drag and Drop
+// Calendar
+@import '~angular-calendar/css/angular-calendar.css';
+
+// User tour
+@import '~hopscotch/dist/css/hopscotch.min.css';
+// Page loader Topbar
+@import '../../vendor/pace/pace-theme-min.css';
+
+
+
+// Main Variables File
+@import "scss/variables";
+
+// Open _themes.scss and remove unnecessary theme files
+@import "scss/themes";
+
+// Open _main.scss and keep files which are required for your current layout.
+@import "scss/main";
+
+// Open _views.scss and remove unnecessary view related files
+@import "scss/views";
+
+@import "scss/utilities/utilities";
+
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+
+@media print {
+    .no-print{
+        display: none !important;
+    }
+    .main-content-wrap{
+        width: auto !important;
+        float: none !important;
+    }
+}

@@ -1,0 +1,76 @@
+.notification-number {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+}
+
+#langToggle .mat-select-trigger {
+  width: 80px;
+  min-width: 80px;
+}
+.theme-list {
+  .mat-menu-item {
+    width: 48px;
+    height: 48px;
+    padding: 5px;
+    .company-swatch {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+    }
+    .active-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto !important;
+      color: #ffffff;
+    }
+  }
+}
+
+.topbar-button-right {
+  margin-left: 1rem !important;
+}
+.vertical-baseline {
+  vertical-align: baseline !important;
+}
+.business_icon {
+  width: 33px !important;
+  height: 33px !important;
+  margin-left: 0px !important;
+  border-radius: 0px 20px 20px 0px !important;
+  color: black !important;
+}
+.business-name {
+  background-color: #e8eaf6;
+  padding-left: 20px !important;
+  height: 33px !important;
+  border-radius: 20px 0px 0px 20px !important;
+  color: black;
+}
+.business-close {
+  vertical-align: baseline !important;
+  font-size: 20px !important;
+  text-align: center !important;
+  color: red !important;
+  height: 33px !important;
+}
+.text-bottom-vertical {
+  vertical-align: text-bottom !important;
+}
+[dir="rtl"] {
+  .topbar-button-right {
+    margin-right: 1rem;
+    margin-left: 0 !important;
+  }
+}

@@ -1,0 +1,161 @@
+app-customer-layout {
+    .main-content-wrap {
+        float: none;
+    }
+}
+
+.home-hold {
+    width: 100%;
+    margin: 0 auto;
+    flex: 1;
+    overflow: auto;
+}
+
+.treatment-details {
+    text-align: left;
+}
+
+.fabric-count {
+    text-align: left;
+    margin: 0px -8px;
+    background: #2f6372;
+    padding-right: 100px;
+}
+
+.home-treatments,
+.home-fablic {
+    padding: 8px;
+    position: relative;
+    border-radius: 8px;
+    cursor: pointer;
+    h2 {
+        margin-top: 0;
+        font-size: 22px;
+        color: darkslategray;
+    }
+    .cover {
+        height: 150px;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 1px 1px 3px #999;
+        background: #b0e9ff;
+        background: -moz-linear-gradient( top, #b0e9ff 0%, #eaeaea 72%, #38494e 72%, #3697ba 100%);
+        background: -webkit-gradient( left top, left bottom, color-stop(0%, #b0e9ff), color-stop(72%, #eaeaea), color-stop(72%, #38494e), color-stop(100%, #3697ba));
+        background: -webkit-linear-gradient( top, #b0e9ff 0%, #eaeaea 72%, #38494e 72%, #3697ba 100%);
+        background: -o-linear-gradient( top, #b0e9ff 0%, #eaeaea 72%, #38494e 72%, #3697ba 100%);
+        background: -ms-linear-gradient( top, #b0e9ff 0%, #eaeaea 72%, #38494e 72%, #3697ba 100%);
+        background: linear-gradient( to bottom, #b0e9ff 0%, #eaeaea 72%, #38494e 72%, #3697ba 100%);
+    }
+    .image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 108px;
+        height: 108px;
+        z-index: 1;
+        background-size: contain !important;
+    }
+    .text {
+        position: absolute;
+        z-index: 0;
+        padding: 8px;
+        text-shadow: 1px 1px 1px #fff, 1px 1px 5px #fff;
+    }
+    mat-icon {
+        color: #fefefe;
+        font-size: 30px;
+    }
+    .mat-form-field-infix {
+        width: auto !important;
+    }
+    .treat-footer {
+        position: absolute;
+        bottom: 0;
+        padding: 3px 8px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        color: #fff;
+        font-weight: bold;
+        line-height: 35px;
+        button {
+            color: #fff;
+            font-weight: bold !important;
+        }
+    }
+}
+
+.home-fablic {
+    .image {
+        width: 90px;
+        height: 90px;
+        top: 4px;
+        right: 4px;
+        opacity: 0.85;
+    }
+    .cover {
+        height: 100px;
+        border: solid 2px #fff;
+    }
+    .fabric-count {
+        margin: 18px -8px;
+        background: #3c99bc;
+        background: -moz-linear-gradient(top, #3c99bc 0%, #307890 100%);
+        background: -webkit-gradient( left top, left bottom, color-stop(0%, #3c99bc), color-stop(100%, #307890));
+        background: -webkit-linear-gradient(top, #3c99bc 0%, #307890 100%);
+        background: -o-linear-gradient(top, #3c99bc 0%, #307890 100%);
+        background: -ms-linear-gradient(top, #3c99bc 0%, #307890 100%);
+        background: linear-gradient(to bottom, #3c99bc 0%, #307890 100%);
+    }
+    .text {
+        width: 100%;
+    }
+    .mat-input-element {
+        caret-color: #d2e9f2;
+        color: #d2e9f2;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .mat-form-field-underline {
+        background-color: #d2e9f2 !important;
+        visibility: hidden;
+    }
+}
+
+.common-head {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px;
+    width: 100%;
+    background: white;
+    box-shadow: 1px 1px 3px #999;
+    justify-content: space-between;
+    z-index: 101;
+    img {
+        height: 30px;
+        width: 30px;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+}
+
+.common-footer {
+    background: white;
+    width: 100%;
+    padding: 4px 16px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px -1px 6px #999;
+    z-index: 101;
+    .mat-button-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #444;
+    }
+    span {
+        line-height: 1;
+    }
+}

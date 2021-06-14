@@ -1,0 +1,33 @@
+.dial-container {
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  > div.column-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: 5px;
+
+    button {
+      margin-bottom: 17px;
+    }
+  }
+}
+
+.dial-toggler {
+  float: right;
+  z-index: 100;
+}
+
+#dial-dismiss {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+}

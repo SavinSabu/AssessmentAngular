@@ -1,0 +1,29 @@
+<div #breadcrumbElement id="breadcrumb" class="breadcrumb-title" fxLayoutAlign="space-between center" fxLayout="row" *ngIf="layout.layoutConf.useBreadcrumb">
+  <h1 class="bc-title overflow-hide-elipsis mr-8" fxFlex *ngIf="routeParts && routeParts[routeParts.length -1]?.breadcrumb">
+    {{routeParts[routeParts.length -1]['breadcrumb'] | translate | uppercase}}
+  </h1>
+  <h1 class="bc-title overflow-hide-elipsis mr-8" *ngIf="customTitle!=''" fxFlex>{{customTitle}}</h1>
+  <div class="button mr-8" *ngIf="statusList.length > 0">
+    <b>{{status_title}}:</b>
+    <button style="vertical-align: middle;" mat-button [matMenuTriggerFor]="statusMenu">{{activeStatus()}}</button>
+    <mat-menu class="flag-menu" #statusMenu="matMenu">
+      <span *ngFor="let status of statusList" [ngClass]="[status.active?'active':'inactive']" class="leadstat top" (click)="filterStatus(status)" mat-menu-item>{{status.name}}</span>
+    </mat-menu>
+  </div>
+  <mat-paginator fxHide.lt-md *ngIf="pageSize" #paginator showFirstLastButtons="true" hidePageSize="true" [length]="pageTotal" [pageSize]="pageSize" (page)="onPage($event)">
+  </mat-paginator>
+  <form fxHide.lt-md *ngIf="showSearch" [formGroup]="searchForm" id="search_form" (ngSubmit)="search(search_value.value)">
+    <input matInput placeholder="Search" name="search_value" [formControl]="searchForm.controls['search_value']" #search_value required />
+    <button mat-icon-button>
+      <mat-icon style="color: darkgrey;">search</mat-icon>
+    </button>
+  </form>
+  <div fxHide.lt-md *ngIf="showRefresh" class="ml-8">
+    <button mat-icon-button (click)="refresh()" aria-label="Refresh">
+      <mat-icon>refresh</mat-icon>
+    </button>
+  </div>
+  <button fxHide.lt-md *ngIf="hasAddButton" ngClass="blue" mat-mini-fab class="ml-8" color="primary" (click)="add()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

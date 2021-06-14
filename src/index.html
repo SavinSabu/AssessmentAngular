@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Savin Sabu - Assessment test</title>
+    <base href="/">
+    <!-- base href="file:///android_asset/www/" -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="theme-color" content="#2c6837">
+    <style>
+        app-root {
+            z-index: 1;
+            display: block;
+            position: relative
+        }
+
+        @keyframes l-pin-full {
+            0% {
+                transform: none
+            }
+
+            5% {
+                transform: translate(70px, -3px) scale(.9, .9)
+            }
+
+            10% {
+                transform: translate(85px, -1px) scale(.4, .4)
+            }
+
+            15% {
+                transform: translate(125px, -2px) scale(.4, .4)
+            }
+
+            20% {
+                transform: translate(85px, -1px) scale(.4, .4)
+            }
+
+            25% {
+                transform: translate(70px, -3px) scale(.9, .9)
+            }
+
+            30% {
+                transform: none
+            }
+
+            100% {
+                transform: none
+            }
+        }
+
+        @keyframes l-pin {
+            0% {
+                transform: none
+            }
+
+            5% {
+                transform: translate(70px, -3px) scale(.9, .9)
+            }
+
+            10% {
+                transform: translate(30px, -1px) scale(.4, .4)
+            }
+
+            15% {
+                transform: translate(70px, -2px) scale(.4, .4)
+            }
+
+            20% {
+                transform: translate(30px, -1px) scale(.4, .4)
+            }
+
+            25% {
+                transform: translate(70px, -3px) scale(.9, .9)
+            }
+
+            30% {
+                transform: none
+            }
+
+            100% {
+                transform: none
+            }
+        }
+
+        @keyframes s-pin {
+            0% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translate(-40px, 5px)
+            }
+
+            100% {
+                transform: translateY(0)
+            }
+        }
+
+        .large-pin {
+            animation: l-pin 15s 2s ease infinite
+        }
+
+        .large-pin-full {
+            animation: l-pin-full 15s 2s ease infinite
+        }
+
+        .small-pin {
+            animation: s-pin 12s 5s ease infinite
+        }
+
+        .farup {
+            position: fixed;
+            top: -10000px
+        }
+    </style>
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#1976d2">
+</head>
+
+<body class="custom-height">
+    <app-root class="full-height"></app-root>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9LfUQnViFtYHJsc2kgAKmJn2N0CZC6aY"></script>
+    <div class="app-loader" id="app-loader"
+        style="height: 100%;width: 100%; align-content: center; vertical-align: middle; background-image: url(assets/images/customers.jpg); background-repeat: no-repeat; background-position: center center;">
+
+    </div>
+    <noscript>Please enable JavaScript to continue using this application.</noscript>
+</body>
+<noscript>Please enable JavaScript to continue using this application.</noscript>
+<script>
+    var sc;
+    window.addEventListener = function () {
+        EventTarget.prototype.addEventListener.apply(this, arguments);
+    };
+    window.removeEventListener = function () {
+        EventTarget.prototype.removeEventListener.apply(this, arguments);
+    };
+    document.addEventListener = function () {
+        EventTarget.prototype.addEventListener.apply(this, arguments);
+    };
+    document.removeEventListener = function () {
+        EventTarget.prototype.removeEventListener.apply(this, arguments);
+    };
+</script>
+
+</body>
+
+</html>

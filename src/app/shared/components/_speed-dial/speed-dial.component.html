@@ -1,0 +1,19 @@
+<div id="dial-dismiss" 
+     *ngIf="dialTogglerState==='active'" 
+     (click)="onToggleDial()">
+</div>
+<div class='dial-container' >
+  <button mat-fab color="primary" (click)="onToggleDial()">
+    <mat-icon>delete</mat-icon>
+  </button>
+  <div class="column-reverse" [@speedDialStagger]="buttons.length">
+    <button *ngFor="let btn of buttons"
+            mat-mini-fab
+            matTooltip="{{btn.tooltip}}"
+            class="fab-secondary"
+            color="secondary"
+            (click)="onClickDial(btn.action)">
+      <i class="material-icons">{{btn.icon}}</i>
+    </button>
+  </div>
+</div>

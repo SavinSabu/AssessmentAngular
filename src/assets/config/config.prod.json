@@ -1,0 +1,9 @@
+{
+    "env": {
+    "name": "prod"
+     },
+    "apiServer": {
+        "dataServer": "http://localhost:8080",
+        "serverName": "Climate"
+    }
+}

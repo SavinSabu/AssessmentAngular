@@ -1,0 +1,26 @@
+.cust-mobile-menu {
+  .mat-card-header-text {
+    flex: auto;
+  }
+  & > button {
+    max-width: 25px;
+    margin-right: 10px;
+  }
+}
+.mh-30 {
+  max-height: 30px;
+}
+.mh30 {
+  mat-icon {
+    max-height: 20px;
+  }
+}
+.shrink {
+  display: none !important;
+}
+
+@media (min-width: 960px) {
+  .expanded {
+    display: flex !important;
+  }
+}

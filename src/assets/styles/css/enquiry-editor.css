@@ -1,0 +1,44 @@
+.customer-message {
+  background-color: #add8e661 !important;
+  width: 90% !important;
+  margin-left: auto !important;
+  padding: 15px 15px 15px 0px !important;
+}
+.admin-response {
+  width: 90% !important;
+  margin-right: auto !important;
+  padding: 15px 15px 15px 0px !important;
+}
+.hidden-area {
+  margin: 0px !important;
+  visibility: hidden !important;
+}
+.custom-reply {
+  height: 32px;
+}
+.custom-reply-inputbox {
+  height: 24px !important;
+  width: 99% !important;
+  outline: none !important;
+  border: none !important;
+}
+.custom-tinyMce-enquiries .tox-tinymce {
+  width: 100% !important;
+  border-radius: 5px !important;
+}
+.custom-tinyMce-enquiries .tox-editor-header {
+  position: absolute !important;
+  bottom: 0px !important;
+  width: 100% !important;
+  border-top: 1px solid #e3e3e3 !important;
+}
+.custom-tinyMce-enquiries .custom-reply-buttom-customer-enquiry {
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+div.reply-content {
+    display: none !important;
+  }
+.tox-tinymce{
+  margin-top: 32px;
+}

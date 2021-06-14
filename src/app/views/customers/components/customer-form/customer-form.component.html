@@ -1,0 +1,128 @@
+<div>
+    <div *ngIf="loading" fxFlex="100" class="empty-data">loading...</div>
+    <div fxFlex *ngIf="!loading" class="auto-overflow">
+      <form [formGroup]="customerForm" *ngIf="customerForm" fxLayout='column' fxFlex="100" class="auto-overflow" autocomplete="off">
+        <div fxFlex fxLayout='column' class="p-1 auto-overflow hide-overflow-x">
+          <div fxLayout="row wrap" fxLayout.lt-md="column">
+            <div fxFlex="100" fxFlex.gt-sm="150px" class="mr-16">
+              <div class="dp_cover">
+                <button type="button" mat-icon-button (click)="uploadDP(data)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <img alt="Customer Image" class="defaultDP" min-width="150" min-height="150"
+                  [src]="data.customer_dp && data.customer_dp.length < 100 ? 'https://d1sem5gm7xf0cd.cloudfront.net/fit-in/150x150/'+data.customer_dp : '/assets/images/face.svg'" />
+              </div>
+            </div>
+            <div fxFlex fxFlex.gt-sm="calc(100% - 150px)" fxLayout="row wrap" fxLayoutGap="20px grid" class="mb-0">
+              <div fxFlex="33.333" fxFlex.lt-sm="100">
+                <mat-form-field class="full-width" #customerName>
+                  <input matInput type="text" placeholder="Customer Name"
+                    [formControl]="customerForm.controls['customerName']" required>
+                </mat-form-field>
+              </div>
+              <div fxFlex="33.333" fxFlex.lt-sm="100">
+                <mat-form-field class="full-width">
+                  <mat-label>Date Of Birth</mat-label>
+                  <input matInput type="text" [min]="data.dateOfBirth"
+                    [formControl]="customerForm.controls['dateOfBirth']" [matDatepicker]="picker" required>
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div fxFlex="33.333" fxFlex.lt-sm="100">
+                <mat-form-field class="full-width">
+                  <input matInput type="text" placeholder="Country"
+                    [formControl]="customerForm.controls['country']">
+                </mat-form-field>
+              </div>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="20px grid" class="mb-0 w-auto">
+              <div fxFlex="50" fxFlex.lt-sm="100">
+                <mat-form-field class="full-width">
+                  <input matInput type="text" placeholder="Attribute 1"
+                    [formControl]="customerForm.controls['customAttr1']">
+                </mat-form-field>
+              </div>
+              <div fxFlex="50" fxFlex.lt-sm="100">
+                <mat-form-field class="full-width">
+                  <input matInput type="text" placeholder="Attribute 2"
+                    [formControl]="customerForm.controls['customAttr2']">
+                </mat-form-field>
+              </div>
+              <div fxFlex="50" fxFlex.lt-sm="100">
+                <mat-form-field class="full-width">
+                  <input matInput type="text" placeholder="Attribute 3"
+                    [formControl]="customerForm.controls['customAttr3']">
+                </mat-form-field>
+              </div>
+              <div fxFlex="50" fxFlex.lt-sm="100">
+                <mat-form-field class="full-width">
+                  <input matInput type="text" placeholder="Attribute 4"
+                    [formControl]="customerForm.controls['customAttr4']">
+                </mat-form-field>
+              </div>
+              <div fxFlex="50" fxFlex.lt-sm="100">
+                <mat-form-field class="full-width">
+                  <input matInput type="text" placeholder="Attribute 5"
+                    [formControl]="customerForm.controls['customAttr5']">
+                </mat-form-field>
+              </div>
+              <div fxFlex="50" fxFlex.lt-sm="100">
+                <mat-form-field class="full-width">
+                  <input matInput type="text" placeholder="Attribute 6"
+                    [formControl]="customerForm.controls['customAttr6']">
+                </mat-form-field>
+              </div>
+              <!--  -->
+              <div fxFlex="100" fxLayout="row" fxLayoutAlign="end center">
+                <mat-form-field fxFlex class=" nmt-16">
+                  <mat-label>Customer type</mat-label>
+                  <mat-select (selectionChange)="onCustomerTypeChange($event)" [(value)]="selectedCustomerType" required>
+                    <mat-option *ngFor="let type of customerType" [value]="type">
+                      {{ type }} 
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div fxFlex="33.333" fxFlex.lt-sm="100">
+                <mat-form-field class="full-width">
+                  <input matInput type="text" placeholder="Age verified"
+                    [formControl]="customerForm.get('customerMeta').controls['ageVerified']">
+                </mat-form-field>
+              </div>
+              <div fxFlex="33.333" fxFlex.lt-sm="100">
+                <mat-form-field class="full-width">
+                  <input matInput type="text" placeholder="Nationality"
+                    [formControl]="customerForm.get('customerMeta').controls['nationality']">
+                </mat-form-field>
+              </div>
+              <div fxFlex="33.333" fxFlex.lt-sm="100">
+                <mat-form-field class="full-width">
+                  <input matInput type="text" placeholder="ID Expiry"
+                    [formControl]="customerForm.get('customerMeta').controls['idExpiry']">
+                </mat-form-field>
+              </div>
+              <div fxFlex="50" fxFlex.lt-sm="100">
+                <mat-form-field class="full-width">
+                  <input matInput type="text" placeholder="Expected income"
+                    [formControl]="customerForm.get('customerMeta').controls['expectedIncome']">
+                </mat-form-field>
+              </div>
+              <div fxFlex="50" fxFlex.lt-sm="100">
+                <mat-form-field class="full-width">
+                  <input matInput type="text" placeholder="Source of Funds"
+                    [formControl]="customerForm.get('customerMeta').controls['sourceOfFunds']">
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="foot-buttons" fxLayout="row" fxLayoutAlign="flex-end center">
+          <input type="hidden" [formControl]="customerForm.controls['customerId']" />
+          <button mat-raised-button color="accent" type="button" (click)="customerList()" class="mr-1">List</button>
+          <button mat-raised-button color="primary"
+            [disabled]="customerForm.invalid" class="mr-1" (click)="save(customerForm.value)">{{ !isEdit ? 'Save': 'Update' }}</button>
+        </div>
+      </form>
+    </div>
+</div>

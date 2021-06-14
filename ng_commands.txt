@@ -1,0 +1,12 @@
+#For Generating Component with routing
+ng g m views/import --routing=true
+
+#For Generating Component without test file and as entry Component
+ng g c shared/components/footer --skipTests=true --entryComponent=true
+
+#For genrating service
+ng g s views/import/import --skipTests=true
+
+
+#For genrating class
+ng g class views/import/merrehill  --skipTests=true

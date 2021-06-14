@@ -1,0 +1,11 @@
+<div fxHide.gt-sm="true" fxLayout="row" fxLayoutAlign="end center" class="p-8">
+    <mat-paginator *ngIf="pageSize" #paginator showFirstLastButtons="true" hidePageSize="true" [length]="pageTotal" [pageSize]="pageSize" (page)="onPage($event)"></mat-paginator>
+    <div *ngIf="showRefresh">
+        <button mat-icon-button (click)="refresh()" aria-label="Refresh">
+            <mat-icon>refresh</mat-icon>
+        </button>
+    </div>
+    <button *ngIf="hasAddButton" ngClass="blue" mat-mini-fab color="primary" (click)="add()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
